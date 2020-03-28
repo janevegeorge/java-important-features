@@ -1,5 +1,7 @@
 package me.janeve.java11.http_client_api.pre;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,6 +12,8 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 public class HttpExampleBeforeJava11 {
+
+    static Logger LOGGER = Logger.getLogger(HttpExampleBeforeJava11.class);
 
     // Create your own fake APIs at beeceptor.com and replace this URL.
     public static final String GET_URL = "<< API ENDPOINT HERE >>";
@@ -33,15 +37,15 @@ public class HttpExampleBeforeJava11 {
                 responseBuilder.append(str);
             }
             in.close();
-            System.out.println(responseBuilder.toString());
+            LOGGER.info("simpleGetRequest Response: " + responseBuilder.toString());
             // The code to actually request ends here ...
 
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (ProtocolException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
@@ -68,15 +72,15 @@ public class HttpExampleBeforeJava11 {
                 responseBuilder.append(str);
             }
             in.close();
-            System.out.println(responseBuilder.toString());
+            LOGGER.info("postRequestWithParametersAndHeaders Response: " + responseBuilder.toString());
             // The code to actually request ends here ...
 
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (ProtocolException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
@@ -96,14 +100,14 @@ public class HttpExampleBeforeJava11 {
                 responseBuilder.append(str);
             }
             in.close();
-            System.out.println(responseBuilder.toString());
+            LOGGER.info("getRequestWithTimeouts Response: " + responseBuilder.toString());
 
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (ProtocolException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 

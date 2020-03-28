@@ -1,5 +1,7 @@
 package me.janeve.java11.http_client_api.latest;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -12,6 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpExampleJava11 {
+
+    static Logger LOGGER = Logger.getLogger(HttpExampleJava11.class);
 
     // Create your own fake APIs at beeceptor.com and replace this URL.
     public static final String GET_URL = "<< API ENDPOINT HERE >>";
@@ -28,9 +32,9 @@ public class HttpExampleJava11 {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder(URI.create(GET_URL)).build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
+            LOGGER.info("simpleGetRequest Response: " + response.body());
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
@@ -48,9 +52,9 @@ public class HttpExampleJava11 {
                     .header("Content-Type", "application/json") // Adding Headers
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
+            LOGGER.info("postRequestWithParametersAndHeaders Response: " + response.body());
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
@@ -63,9 +67,9 @@ public class HttpExampleJava11 {
                     .timeout(Duration.ofSeconds(5))         // Setting Read Timeout of 5 Seconds
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
+            LOGGER.info("getRequestWithTimeouts Response: " + response.body());
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
     }
 
