@@ -7,6 +7,35 @@ import java.util.Locale;
 /*
     The Compact Numbering Format was introduced in Java 12.
     This code provides an example of how format numbers based on various locales that are available.
+
+    Sample Output:
+
+         SHORT FORMATTING (English (United States))
+    =====================================================
+    1                     :1
+    2000                  :2K
+    2345                  :2K
+    30,000                :30K
+    34,567                :35K
+    4,000,000             :4M
+    4,00,00,000           :40M
+    5,000,000,000         :5B
+    60,000,000,000        :60B
+    7,000,000,000,000     :7T
+
+
+         LONG FORMATTING (English (United States))
+    ====================================================
+    1                     :1
+    2000                  :2 thousand
+    2345                  :2 thousand
+    30,000                :30 thousand
+    34,567                :35 thousand
+    4,000,000             :4 million
+    4,00,00,000           :40 million
+    5,000,000,000         :5 billion
+    60,000,000,000        :60 billion
+    7,000,000,000,000     :7 trillion
  */
 public class CompactNumberFormattingExamples {
 
