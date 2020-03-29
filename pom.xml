@@ -10,6 +10,7 @@
     <modules>
         <module>java-se-11</module>
         <module>java-se-12</module>
+        <module>java-se-5</module>
     </modules>
 
     <packaging>pom</packaging>
