@@ -1,7 +1,8 @@
 package me.janeve.java11.http_client_api.pre.async;
 
 import me.janeve.java11.http_client_api.AsyncHttpResponseHandler;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +16,7 @@ import java.util.concurrent.Executors;
 
 public class AsyncHttpURLConnection {
 
-    static Logger LOGGER = Logger.getLogger(AsyncHttpURLConnection.class);
+    private static Logger LOGGER = LogManager.getLogger();
 
     private final ExecutorService threadPool = Executors.newCachedThreadPool();
 
@@ -50,6 +51,7 @@ public class AsyncHttpURLConnection {
                 handler.handleError(e);
             }
         });
+        threadPool.shutdown();
     }
 
 }

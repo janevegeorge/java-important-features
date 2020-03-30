@@ -1,10 +1,11 @@
 package me.janeve.java11.http_client_api;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ConsolePrinterResponseHandler implements AsyncHttpResponseHandler {
 
-    static Logger LOGGER = Logger.getLogger(ConsolePrinterResponseHandler.class);
+    private static Logger LOGGER = LogManager.getLogger();
 
     @Override
     public void handle(String response) {

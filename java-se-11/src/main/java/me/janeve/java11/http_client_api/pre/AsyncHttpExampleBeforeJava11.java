@@ -2,15 +2,16 @@ package me.janeve.java11.http_client_api.pre;
 
 import me.janeve.java11.http_client_api.ConsolePrinterResponseHandler;
 import me.janeve.java11.http_client_api.pre.async.AsyncHttpURLConnection;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class AsyncHttpExampleBeforeJava11 {
 
-    static Logger LOGGER = Logger.getLogger(AsyncHttpExampleBeforeJava11.class);
+    private static Logger LOGGER = LogManager.getLogger();
 
     // Create your own fake APIs at beeceptor.com and replace this URL.
     // Configure a high "Response delayed by" for the endpoint for a better experience of the code
-    public static final String GET_URL = "<< API ENDPOINT HERE >>";
+    public static final String GET_URL = "https://janeve.free.beeceptor.com/longtime";
 
     public static void main(String[] args) {
         simpleAsyncHttpRequest();

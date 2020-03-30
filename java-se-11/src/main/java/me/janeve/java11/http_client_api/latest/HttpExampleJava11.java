@@ -1,6 +1,7 @@
 package me.janeve.java11.http_client_api.latest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URI;
@@ -15,11 +16,11 @@ import java.util.Map;
 
 public class HttpExampleJava11 {
 
-    static Logger LOGGER = Logger.getLogger(HttpExampleJava11.class);
+    private static Logger LOGGER = LogManager.getLogger();
 
     // Create your own fake APIs at beeceptor.com and replace this URL.
-    public static final String GET_URL = "<< API ENDPOINT HERE >>";
-    public static final String POST_URL = "<< API ENDPOINT HERE >>";
+    public static final String GET_URL = "https://janeve.free.beeceptor.com/users";
+    public static final String POST_URL = "https://janeve.free.beeceptor.com/users";
 
     public static void main(String[] args) {
         simpleGetRequest();
