@@ -1,5 +1,11 @@
 package me.janeve.java5.varargs;
 
+/**
+ * Java varargs feature allows to create methods for which you are not sure
+ * how many arguments your method needs to accept. A method that takes
+ * variable number of arguments is called a variable-arity method, or
+ * simply a varargs method.
+ */
 public class Java5Example {
 
     public static void main(String[] args) {
