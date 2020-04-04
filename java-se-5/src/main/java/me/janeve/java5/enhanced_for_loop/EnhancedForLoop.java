@@ -1,4 +1,4 @@
-package me.janeve.java5.enhanced_foreach;
+package me.janeve.java5.enhanced_for_loop;
 
 import java.util.*;
 
