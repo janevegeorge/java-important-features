@@ -14,4 +14,13 @@
         <maven.compiler.source>1.6</maven.compiler.source>
     </properties>
     <artifactId>java-se-5</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+    </dependencies>
+
 </project>
