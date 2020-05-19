@@ -6,10 +6,9 @@ public class BuildManager {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("How many build jobs to run?");
         Scanner inputScanner = new Scanner(System.in);
-
-        BuildManager buildManager = new BuildManager();
         int N = inputScanner.nextInt();
 
+        BuildManager buildManager = new BuildManager();
         for (int i = 0; i < N; i++) {
             buildManager.buildJob(i);
         }
